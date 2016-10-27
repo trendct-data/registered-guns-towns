@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1477584476882.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "88DCC233",
+    "lastKnownWriteTime" : 4472451584,
+    "last_content_update" : 1477584476882,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "50432E95",
+        "caption" : "guns",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=guns&cache_key=50432E95",
+        "displayedObservations" : "11915",
+        "environment" : "",
+        "object" : "guns",
+        "preview" : "0",
+        "totalObservations" : "11915",
+        "variables" : "4"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

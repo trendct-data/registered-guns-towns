@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(readxl)\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(ctnamecleaner)\nguns <- read_excel(\"data/16-591.xlsx\", sheet=1)\nguns <- ctnamecleaner(CITY_OR_TOWN, guns)\nguns <- guns %>% group_by(real.town.name, Year, GUN_TYPE) %>%\n  summarise(Count=sum(Count, na.rm=T)) %>%\n  filter(!is.na(real.town.name)) %>%\n  filter(real.town.name!=\"M\")\n## Overall by year\n\noverall <- guns %>%\n  group_by(Year) %>%\n  summarise(Count=sum(Count)) %>%\n  filter(Year<=2016)\n\ngg <- ggplot(overall, aes(x=Year, y=Count))\ngg <- gg + geom_line()\n\ngg\n\n## Overall by year by gun type\n\noverall_type <- guns %>%\n  group_by(Year, GUN_TYPE) %>%\n  summarise(Count=sum(Count)) %>%\n  filter(Year<=2016)\n\ngg <- ggplot(overall_type, aes(x=Year, y=Count, group=GUN_TYPE, color=GUN_TYPE))\ngg <- gg + geom_line()\n\ngg\n\n## Overall by year by town\n\noverall_town<- guns %>%\n  group_by(real.town.name, Year) %>%\n  summarise(Count=sum(Count)) %>%\n  filter(Year<=2016)\n\ngg <- ggplot(overall_town, aes(x=Year, y=Count))\ngg <- gg + geom_line()\ngg <- gg + facet_wrap(~real.town.name, ncol=4)\n\ngg\n\n",
+    "created" : 1477584430821.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3922111121",
+    "id" : "977FC94",
+    "lastKnownWriteTime" : 1477586027,
+    "last_content_update" : 1477586027819,
+    "path" : "~/Documents/Github/trendct-data/2016/09/registered-guns/analysis.R",
+    "project_path" : "analysis.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

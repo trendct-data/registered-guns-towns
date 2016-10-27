@@ -1,0 +1,9 @@
+{
+    "path" : "~/Documents/Github/trendct-data/2016/09/registered-guns/data",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}
